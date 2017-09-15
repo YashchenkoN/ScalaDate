@@ -50,6 +50,10 @@ object LocalDateExtensions {
     def -(period: Period): Period = {
       self.minus(period)
     }
+
+    def fromNow(): LocalDate = {
+      LocalDate.now() + self
+    }
   }
 
   implicit final class Day(d: Int) {

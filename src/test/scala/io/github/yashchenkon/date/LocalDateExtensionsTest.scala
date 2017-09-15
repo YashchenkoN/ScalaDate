@@ -76,4 +76,8 @@ class LocalDateExtensionsTest extends FlatSpec with Matchers {
     LocalDate.of(2017, 1, 1) <= LocalDate.of(2017, 1, 1) should be (true)
   }
 
+  it should "calculate period from now" in {
+    1.day.fromNow should be (LocalDate.now() + 1.day)
+  }
+
 }

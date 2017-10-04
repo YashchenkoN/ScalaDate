@@ -1,6 +1,6 @@
 package io.github.yashchenkon.date
 
-import java.time.{LocalDate, Period}
+import java.time.{LocalDate, LocalDateTime, LocalTime, Period}
 
 
 /**
@@ -11,6 +11,10 @@ object LocalDateExtensions {
   implicit final class LocalDateExt(ext: LocalDate) {
     def +(duration: Period): LocalDate = {
       ext.plus(duration)
+    }
+
+    def +(localTime: LocalTime): LocalDateTime = {
+      LocalDateTime.of(ext, localTime)
     }
 
     def -(period: Period): LocalDate = {

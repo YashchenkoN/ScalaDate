@@ -1,8 +1,8 @@
 package io.github.yashchenkon.date
 
-import java.time.LocalDate
-import LocalDateExtensions._
+import java.time.{LocalDate, LocalDateTime, LocalTime}
 
+import LocalDateExtensions._
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
@@ -78,6 +78,10 @@ class LocalDateExtensionsTest extends FlatSpec with Matchers {
 
   it should "calculate period from now" in {
     1.day.fromNow should be (LocalDate.now() + 1.day)
+  }
+
+  it should "add local time" in {
+    LocalDate.of(2017, 1, 1) + LocalTime.of(1, 1) should be (LocalDateTime.of(2017, 1, 1, 1, 1))
   }
 
 }
